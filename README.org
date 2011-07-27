@@ -1,0 +1,37 @@
+* Description
+  A simple python script that gives the color of the pixel at which
+  the mouse is pointed.  This script is intended to serve as an aid to
+  people who are color-blind.
+* Installation
+*** Windows
+    1. Install [[http://www.python.org/download/][Python]]
+    2. Install [[http://sourceforge.net/projects/pywin32/files/pywin32/][pywin32]]
+    3. Get the source code of prang and execute the script prang.py.
+*** Unix/Linux
+    1. Install Python
+    2. Install pygtk
+    3. Install python-xlib
+    4. Install [[http://pypi.python.org/pypi/PyZenity][PyZenity]]
+    5. Get the source code of prang and execute the script prang.py.
+* How it works
+  1. It picks up the RGB values of the pixel at which the mouse
+     pointer is present.
+  2. Looks up the color from a look-up table and returns the color if,
+     it is present in the look-up table.
+  3. Else, calculates the nearest neighbor and returns the name of
+     that color. [An asterisk indicates this approximation]
+  4. This color name is then shown in a pop-up window.
+
+
+  Ideally, this script should be hooked to a short-cut key, so as to
+  run it with ease. 
+* Contributors
+  - Pranesh :: Thanks for getting super excited on seeing a demo and
+               for allowing us to name the app, based on his name.
+  - [[http://cloud9trt.blogspot.com][9]] :: initial idea and feedback
+  - [[http://poeticparadigm.wordpress.com/][Chaitu]] :: Feedback, Ideas and Criticism. 
+  - [[http://rosettacode.org/wiki][Rosetta Code]] :: Some code snippets. 
+  - [[http://cloford.com/resources/colours/500col.htm][Cloford]] :: Color names look-up table. 
+  - @baali and @punchagan -- Put the pieces together. 
+
+
