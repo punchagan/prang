@@ -85,7 +85,8 @@ if __name__ == "__main__":
         get_mouse_position = get_mouse_position_win
         show_message = show_message_win
     else:
-        pass
+        print 'Platform not supported'
+        exit()
 
     x, y = get_mouse_position()
 
