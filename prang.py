@@ -31,8 +31,24 @@ def get_mouse_position_win():
     return pt.x, pt.y
 
 def show_message_unix(text):
-    from PyZenity import InfoMessage
-    InfoMessage(text)
+    class MyDialog(gtk.Window):
+        def __init__(self, text):
+            super(MyDialog, self).__init__()
+            self.text = text
+            self.show_info()
+            self.start()
+
+        def start(self):
+            gtk.main()
+
+        def show_info(self):
+            md = gtk.MessageDialog(self,
+                gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO,
+                gtk.BUTTONS_CLOSE, self.text)
+            md.run()
+            md.connect('event-after', gtk.main_quit)
+
+    MyDialog(text)
 
 def show_message_win(text, caption="Color"):
     from ctypes import c_int, WINFUNCTYPE, windll
