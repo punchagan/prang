@@ -91,7 +91,6 @@ if __name__ == "__main__":
     x, y = get_mouse_position()
 
     color_dec = get_pixel_colour(x, y)
-    print color_dec
     color_hex = ''.join(map(dec2hex, color_dec)).upper()
 
     if color_hex in names:
@@ -103,5 +102,5 @@ if __name__ == "__main__":
                 color = c
                 dist = distance(c, color_hex)
         color = names[color] + ' *'
-
-    show_message(color)
+    output = 'Color: %s\nHex: %s\nDecimal: %s' %(color, color_hex, color_dec)
+    show_message(output)
