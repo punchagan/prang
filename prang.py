@@ -12,7 +12,7 @@ def get_pixel_colour_win(i_x, i_y):
 def get_pixel_colour_unix(i_x, i_y):
     o_gdk_pixbuf = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB, False, 8, 1, 1)
     o_gdk_pixbuf.get_from_drawable(gtk.gdk.get_default_root_window(), gtk.gdk.colormap_get_system(), i_x, i_y, 0, 0, 1, 1)
-    return tuple(o_gdk_pixbuf.get_pixels_array().tolist()[0][0])
+    return [ord(c) for c in o_gdk_pixbuf.get_pixels()][:3]
 
 def get_mouse_position_unix():
     d = Display()
